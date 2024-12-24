@@ -1,0 +1,102 @@
+body {
+    background-color: #151522;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* SVG 响应式处理 */
+.mainSVG {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  max-height: 90vh;
+  visibility: hidden;
+}
+
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+svg {
+    width: 90%;
+    height: 90%;
+    visibility: hidden;
+}
+
+.sparkle {
+    /* Add your sparkle effect properties here */
+    animation: sparkle 1s infinite;
+}
+
+@keyframes sparkle {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.font {
+  color: #ec0d0d;
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px;
+  font-weight: 600;
+  font-size: 28px;
+  font-family: "黑体";
+  color: #8c888b;
+  background: -webkit-linear-gradient(45deg, #58eff6, #f17840, #eac821, #4913ea, #bed5f5);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: ran 5s linear infinite;
+
+  position: fixed;
+  bottom: 20px;
+  text-align: center;
+  font-size: clamp(16px, 4vw, 28px); 
+  width: 100%;
+  padding: 10px;
+}
+
+  @keyframes ran {
+    from {
+      backgroud-position: 0 0;
+    }
+    to {
+      background-position: 2000px 0;
+    }
+  }
+
+
+/* 播放按钮样式优化 */
+.play-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: clamp(20px, 5vw, 32px);
+  padding: 10px;
+  margin-left: 10px;
+}
+
+/* 针对小屏幕设备的优化 */
+@media screen and (max-width: 768px) {
+  .mainSVG {
+      width: 95%;
+      margin: 10px auto;
+  }
+
+  .font {
+      bottom: 10px;
+  }
+}
